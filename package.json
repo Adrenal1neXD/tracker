@@ -7,7 +7,7 @@
   "license": "ISC",
   "repository": {},
   "scripts": {
-    "build": "webpack --progress",
+    "build": "webpack --progress --display-error-details",
     "build:prod": "webpack -p --progress",
     "postinstall": "typings install",
     "tsc": "tsc",
@@ -32,6 +32,7 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
+    "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.22.0",
     "ts-loader": "^0.8.2",
     "typescript": "^1.8.10",
