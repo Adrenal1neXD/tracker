@@ -1,37 +1,14 @@
-'use strict';
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-
-module.exports = {
-  entry: "./src/main.ts",
-  output: {
-    path: __dirname + "/dist",
-    filename: "bundle.js"
-  },
-
-  watch: true,
-  watchOptions: {
-    aggregateTimeout: 300
-  },
-  devtool: "eval",
-
-  module: {
-    loaders: [{
-      test: /\.ts$/,
-      loader: 'ts'
-    }, {
-      test: /\.html$/,
-      loader: 'html'
-    }]
-  },
-
-  resolve: {
-    extensions: ['', '.js', '.ts']
-  },
-
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html' 
-    })
-  ]
+switch (process.env.NODE_ENV) {
+  case 'prod':
+  case 'production':
+    module.exports = require('./config/webpack.prod');
+    break;
+  case 'test':
+  case 'testing':
+    module.exports = require('./config/webpack.test');
+    break;
+  case 'dev':
+  case 'development':
+  default:
+    module.exports = require('./config/webpack.dev');
 }
