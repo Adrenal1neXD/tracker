@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 
+const mainMenuTemplate = require('./main-menu.component.html');
+const mainMenuStyles = require('./main-menu.component.css');
 @Component({
     selector: 'tr-main-menu',
-    template: require('./main-menu.component.html'),
-    styles: [require('./main-menu.component.css')]
+    template: mainMenuTemplate,
+    styles: [mainMenuStyles]
 })
 export class MainMenuComponent {}
