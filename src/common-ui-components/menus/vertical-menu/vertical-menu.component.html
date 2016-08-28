@@ -1,0 +1,8 @@
+<div class="ui secondary vertical pointing menu">
+    <a class="item" 
+    *ngFor="let option of options; let idx = index" 
+    [ngClass]="{active: idx === selectedIndex}" 
+    (click)="onOptionSelected(idx)">
+      {{option}}
+    </a>
+</div>
